@@ -1,0 +1,15 @@
+<configuration>
+
+  <conversionRule conversionWord="correlationId" converterClass="kamon.trace.logging.LogbackTraceTokenConverter"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[%thread] [%correlationId] %-5level %logger{40} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
